@@ -1,0 +1,91 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('https://images.unsplash.com/photo-1557683316-973673baf926');
+}
+
+h1 {
+    margin-top: 20px;
+}
+
+#deck {
+    position: relative;
+    width: 80%;
+    height: 60vh; /* 카드 높이를 고려하여 설정 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px; /* 버튼과의 간격을 설정 */
+}
+
+.card {
+    width: 100px; /* 카드의 너비 */
+    height: 150px; /* 카드의 높이 */
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 10px;
+    position: absolute;
+    transition: transform 0.5s ease;
+    z-index: 1; /* 카드가 겹칠 때 시각적으로 올림 */
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.card .label {
+    position: absolute;
+    bottom: -20px; /* 카드 아래로 적절한 간격 */
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    color: #000;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    z-index: 10; /* 카드 위에 버튼이 보이도록 설정 */
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* 추가된 로딩 애니메이션 CSS */
+.loader {
+    display: none;
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #3498db;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    animation: spin 2s linear infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000; /* 로딩 애니메이션이 다른 요소들 위에 보이도록 설정 */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
